@@ -77,11 +77,7 @@
       <p class="stage__hint" id="hint">Toque no hambúrguer</p>
 
       <!-- Fichas (como as "Calories / Fat / Protein" da referência) -->
-      <div class="facts" id="facts">
-        <div class="fact"><span>Camadas</span><b id="f-layers">7</b></div>
-        <div class="fact"><span>Carne</span><b id="f-meat">1×</b></div>
-        <div class="fact"><span>Queijo</span><b id="f-cheese">Sim</b></div>
-      </div>
+      <div class="facts" id="facts"></div>
 
       <!-- Próximo hambúrguer a espreitar na margem -->
       <div class="peek" id="peek" aria-hidden="true"></div>
@@ -107,54 +103,148 @@
     </div>
   </section>
 
-  <!-- MENU -->
-  <section class="highlights" id="menu">
-    <div class="wrap">
-      <header class="section-head">
-        <span class="eyebrow">Do fogo para a mesa</span>
-        <h2>Um mundo no prato</h2>
-        <p>Hambúrgueres, frango, wings, combos e pizza — grelhados no Baía Mall, em Maputo, desde 2019.</p>
-      </header>
-      <div class="cards">
-        <article class="card card--red">
-          <img src="assets/img/burgers/korean.webp" alt="Korean Chicken" loading="lazy">
-          <div class="card__body"><h3>Korean Chicken</h3><span>770 MZN</span></div>
-        </article>
-        <article class="card card--amber">
-          <img src="assets/img/burgers/beef.webp" alt="Hambúrguer de carne BBQ House" loading="lazy">
-          <div class="card__body"><h3>Burgers</h3><span>desde 650 MZN</span></div>
-        </article>
-        <article class="card card--dark card--photo">
-          <img src="assets/img/photos/home-combos.webp" alt="Combo BBQ House com hambúrgueres, sanduíche e batatas" loading="lazy">
-          <div class="card__body"><h3>Combo 2 pessoas</h3><span>1,300 MZN</span></div>
-        </article>
+  <!-- CAMADA A CAMADA: o scroll separa os ingredientes, pausa e volta a montar -->
+  <section class="story" id="story" aria-label="Korean Chicken camada a camada">
+    <div class="story__sticky">
+      <div class="story__light" aria-hidden="true"></div>
+      <div class="wrap story__grid">
+        <div class="story__copy">
+          <span class="eyebrow">Camada a camada</span>
+          <h2>Korean<br>Chicken</h2>
+          <p>Desça a página e veja tudo o que vai dentro: cada ingrediente separa-se, mostra a textura e volta ao lugar.</p>
+          <ol class="story__list" id="story-list"></ol>
+          <div class="story__cta" id="story-cta">
+            <a class="btn-order btn-order--red" href="https://wa.me/258851550000?text=Ol%C3%A1%20BBQ%20House!%20Quero%20encomendar%3A%20Korean%20Chicken" target="_blank" rel="noopener">Encomendar</a>
+            <span class="story__price">770 <small>MZN</small></span>
+          </div>
+        </div>
+        <div class="story__stage" id="story-stage">
+          <div class="story__steam" id="story-steam" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="gallery" id="historia">
-    <figure><img src="assets/img/photos/home-wings.webp" alt="Chicken wings" loading="lazy"><figcaption>Chicken Wings · desde 620 MZN</figcaption></figure>
-    <figure><img src="assets/img/photos/menu-drinks.webp" alt="Bebida da casa" loading="lazy"><figcaption>Bebidas da casa</figcaption></figure>
-    <figure><img src="assets/img/photos/menu-desserts.webp" alt="Cookie pan" loading="lazy"><figcaption>Sobremesas</figcaption></figure>
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <span class="eyebrow">O menu</span>
+        <h2>Do fogo para a mesa</h2>
+        <p>Hambúrgueres, frango, wings, combos, pizza e muito mais. Preços em MZN.</p>
+      </header>
+      <div class="mgrid">
+        <a class="mcard card--xl" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-burgers.webp" alt="Hambúrguer de carne da BBQ House" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Burgers</b><small>desde 650 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/home-wings.webp" alt="Frango frito crocante" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Entradas &amp; wings</b><small>desde 300 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-sandwiches.webp" alt="Sanduíche de frango crocante" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Sanduíches</b><small>desde 700 MZN</small></span>
+        </a>
+        <a class="mcard card--wide" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-combos.webp" alt="Combo com hambúrgueres e batatas" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Combos</b><small>desde 1,300 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-mains.webp" alt="Prato principal servido em chapa" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Pratos</b><small>desde 1,350 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-eataly.webp" alt="Massa com molho cremoso" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Pizza &amp; pasta</b><small>desde 900 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-kids.webp" alt="Mini hambúrgueres e nuggets" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Kids</b><small>desde 550 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-salads.webp" alt="Salada da casa" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Saladas</b><small>desde 750 MZN</small></span>
+        </a>
+        <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-desserts.webp" alt="Cookie pan com gelado" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Sobremesas</b><small>desde 550 MZN</small></span>
+        </a>
+        <a class="mcard card--wide" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
+          <img src="assets/img/photos/menu-drinks.webp" alt="Bebida da casa" loading="lazy" data-parallax>
+          <span class="mcard__body"><b>Bebidas</b><small>desde 70 MZN</small></span>
+        </a>
+      </div>
+      <div class="menu__more" data-reveal>
+        <a class="btn-ghost" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener">Ver menu completo
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- A CASA -->
+  <section class="house" id="historia">
+    <div class="wrap house__grid">
+      <figure class="house__photo" data-reveal>
+        <img src="assets/img/photos/home-korean-chicken.webp" alt="Korean Chicken com batatas fritas" loading="lazy" data-parallax>
+        <figcaption>Desde 2019</figcaption>
+      </figure>
+      <div class="house__copy">
+        <span class="eyebrow" data-reveal>A casa</span>
+        <h2 data-reveal>Um mundo<br>no prato</h2>
+        <p data-reveal>A BBQ House é uma hamburgueria e restaurante casual em Maputo: hambúrgueres feitos à mão, batatas carregadas, wings, combos, pizza e massa, saladas, sobremesas e bebidas da casa. Grelhado na chama, para almoço, jantar, takeaway e delivery.</p>
+        <ul class="house__points">
+          <li data-reveal><b>Baía Mall, Maputo</b><span>Para ir com a família e com os amigos.</span></li>
+          <li data-reveal><b>Clássicos bem feitos</b><span>Burgers, wings, batatas e combos, direto da grelha.</span></li>
+          <li data-reveal><b>Delivery &amp; takeaway</b><span>Encomende pelo WhatsApp.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="delivery" id="delivery">
+    <div class="wrap delivery__inner" data-reveal>
+      <div>
+        <span class="eyebrow">Delivery &amp; takeaway</span>
+        <h2>Com fome?<br>Nós levamos.</h2>
+        <p>Todos os dias, das 10:30 às 21:30. Encomende pelo WhatsApp e receba em casa ou levante no Baía Mall.</p>
+      </div>
+      <div class="delivery__actions">
+        <a class="btn-order btn-order--red btn-lg" href="https://wa.me/258851550000" target="_blank" rel="noopener">Encomendar no WhatsApp</a>
+        <a class="delivery__phone" href="https://wa.me/258851550000">+258 85 155 0000</a>
+      </div>
+    </div>
   </section>
 
   <footer class="footer" id="contacto">
-    <div class="wrap footer__inner">
-      <img class="footer__logo" src="assets/brand/logo-white.png" alt="BBQ House">
-      <div id="localizacao">
-        <span class="eyebrow">Onde estamos</span>
-        <p>Baía Mall, Maputo · Moçambique</p>
-        <p>Aberto todos os dias, 10:30 – 21:30</p>
+    <div class="wrap footer__top">
+      <img class="footer__logo" src="assets/brand/logo-white.png" alt="BBQ House" loading="lazy">
+      <nav class="footer__col" aria-label="Rodapé">
+        <span class="eyebrow">Navegar</span>
+        <a href="#menu">Menu</a><a href="#story">Camada a camada</a><a href="#historia">A casa</a><a href="#delivery">Delivery</a>
+      </nav>
+      <div class="footer__col" id="localizacao">
+        <span class="eyebrow">Visite-nos</span>
+        <p>Baía Mall, Maputo<br>Moçambique</p>
+        <p>Todos os dias<br>10:30 – 21:30</p>
       </div>
-      <div id="delivery">
-        <span class="eyebrow">Delivery &amp; takeaway</span>
-        <p><a href="https://wa.me/258851550000">WhatsApp +258 85 155 0000</a></p>
-        <a class="btn-order btn-order--red" href="https://wa.me/258851550000" target="_blank" rel="noopener">Encomendar agora</a>
+      <div class="footer__col">
+        <span class="eyebrow">Contacto</span>
+        <a href="https://wa.me/258851550000" target="_blank" rel="noopener">WhatsApp +258 85 155 0000</a>
+        <a href="https://www.instagram.com/bbqhouse.mz" target="_blank" rel="noopener">Instagram @bbqhouse.mz</a>
+        <a href="https://www.facebook.com/share/1EReG5933v/" target="_blank" rel="noopener">Facebook</a>
       </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">Um mundo no prato</div>
+    <div class="wrap footer__bottom">
+      <span>© 2026 BBQ House · Hamburgueria em Maputo</span>
+      <span>Preços em MZN, sujeitos a confirmação.</span>
     </div>
   </footer>
 
   <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
