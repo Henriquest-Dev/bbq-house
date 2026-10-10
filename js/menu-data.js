@@ -1,4 +1,4 @@
-/* Menu publicado em bbqhousemoz.com/pt/menu (consulta 10/10/2026). Preços em MZN.
+/* Menu oficial da BBQ House (consulta 10/10/2026). Preços em MZN.
    Gerado a partir da página; nomes e descrições como publicados. */
 window.BBQ_MENU = [
  {

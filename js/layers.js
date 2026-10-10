@@ -50,7 +50,7 @@
   const REF_W = 470, REF_CX = 628;
 
   /* ---------- Slides do hero ----------
-     Nomes, preços e descrições como publicados no menu (bbqhousemoz.com/menu). The Classic e Cheese Burger usam as
+     Nomes, preços e descrições como no menu oficial. The Classic e Cheese Burger usam as
      camadas da imagem de referência; Holy Buns usa a foto da categoria Burgers do site (que não identifica o prato). */
   const SLIDES = [
     { name: 'Korean Chicken', tag: 'Chicken Burger', price: '770', color: '#C78A3B', ink: '#12100E', kit: 'korean',

@@ -12,10 +12,11 @@ python3 -m http.server 8000
 |---|---|
 | `index.html` | Hero (carrossel dos hambúrgueres + botão **Ver camadas**; na primeira visita o hambúrguer abre-se sozinho por instantes), Faz zoom, menu resumido, A vibe, A casa, chamadas para Camadas e Reservas, Delivery |
 | `menu.html` | Menu completo: 104 pratos e bebidas em 10 categorias, com as descrições publicadas em português. Barra de categorias fixa, pesquisa, destaques com foto e a poupança dos combos. Cada prato tem "+" para juntar ao **pedido**, que segue formatado para o WhatsApp (entrega ou take-away) |
+| `bebidas.html` | Carta de bebidas. Em cima, a roda dos 8 mocktails da casa (estilo do vídeo de referência): um copo de cada vez, a roda gira para trazer o seguinte, a cor do cartaz cresce a partir do copo e o nome entra na vertical. Desliza, setas ou teclado; passa sozinha enquanto está à vista. Em baixo, cafés, sumos e refrigerantes com o "+" para juntar ao pedido. Os copos são a foto real do mocktail da casa recolorida para cada bebida (imagens ilustrativas) |
 | `camadas.html` | "Camada a camada" para 4 hambúrgueres (Korean Chicken, The Classic, Cheese Burger e a foto da secção Holy Buns): o scroll separa os ingredientes, pausa com as legendas e volta a montar. `camadas.html#korean-chicken` abre diretamente um deles |
 | `reservas.html` | Sistema de reservas (pessoas, dia, hora, ocasião → WhatsApp + calendário) |
 
-Dados do menu: `js/menu-data.js`, gerado a partir de bbqhousemoz.com/pt/menu (consulta 10/10/2026). Nomes, preços e descrições são exactamente os publicados; nada foi acrescentado. A única etiqueta ("Poupa X") é a diferença entre o preço antigo e o actual que o próprio site mostra nos combos.
+Dados do menu: `js/menu-data.js`, gerado a partir do menu oficial da casa (consulta 10/10/2026). Nomes, preços e descrições são exactamente os publicados; nada foi acrescentado. A única etiqueta ("Poupa X") é a diferença entre o preço antigo e o actual que o próprio site mostra nos combos.
 
 Código: `js/layers.js` (camadas, partilhado), `js/main.js` (hero), `js/camadas.js`, `js/menu.js`, `js/extras.js` (zoom, galeria, ilustrações, reservas, menu do telemóvel, entradas das secções).
 
@@ -44,3 +45,7 @@ Tudo o que se mexe é animado só com `transform` e `opacity` (camadas na GPU), 
 >
 > Nomes e preços vêm do menu publicado (consulta de 09/10/2026, MZN). As camadas, os textos e as etiquetas de cada hambúrguer são ilustrativos: confirmar receitas com a cozinha.
 > As camadas foram recortadas da imagem de referência (crédito: team NexGen). Para produção, o ideal é fotografar as camadas de um hambúrguer da casa e substituir os ficheiros em `assets/img/layers/` com os mesmos nomes.
+
+## Telemóvel
+
+Barra fixa em baixo (Menu · Bebidas · Reservar · WhatsApp) com margens seguras do iPhone; ecrãs animados acabam acima dela. Alvos de toque com pelo menos 40–44 px; no menu, o "+" fica ao lado de cada prato e a pesquisa abre a partir de um ícone.

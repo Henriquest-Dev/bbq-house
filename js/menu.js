@@ -72,6 +72,7 @@
           ${feats.map(([it, ii]) => feature(it, ci, ii)).join('')}
           ${groups.map(g => `${g.g ? `<h3 class="mgroup">${esc(g.g)}</h3>` : ''}<ul class="dishes${compact ? ' dishes--grid' : ''}">${g.items.map(([it, ii]) => dish(it, ci, ii, compact)).join('')}</ul>`).join('')}
           ${c.extras.map(e => `<p class="mcat__extras">${esc(e)}</p>`).join('')}
+          ${c.id === 'drinks' ? '<a class="btn-ghost mcat__more" href="bebidas.html">Ver a carta de bebidas <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' : ''}
         </div>
       </div>
     </section>`;
@@ -205,6 +206,7 @@
   });
 
   render();
+  if (/[?&]pedido=1/.test(location.search)) setTimeout(() => openDrawer(true), 300); // vindo da carta de bebidas
   $$('.mcat__photo img').forEach(img => img.setAttribute('data-parallax', ''));
   if (location.hash) { const t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(() => t.scrollIntoView(), 50); }
 })();

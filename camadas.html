@@ -2,7 +2,8 @@
 <html lang="pt">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12100E">
   <title>Camada a camada — BBQ House Maputo</title>
   <meta name="description" content="Vê cada hambúrguer da BBQ House camada a camada: pão, molhos, vegetais e carne, um a um.">
   <link rel="icon" href="assets/brand/logo-dark.png">
@@ -15,7 +16,7 @@
   <header class="snav">
     <div class="snav__in">
       <a class="snav__logo" href="index.html" aria-label="BBQ House — início"><img src="assets/brand/logo-white.png" alt="BBQ House"></a>
-      <nav class="snav__links" aria-label="Principal"><a href="index.html">Início</a><a href="menu.html">Menu</a><a href="camadas.html" aria-current="page">Camada a camada</a><a href="index.html#vibe">A vibe</a><a href="reservas.html">Reservas</a></nav>
+      <nav class="snav__links" aria-label="Principal"><a href="index.html">Início</a><a href="menu.html">Menu</a><a href="bebidas.html">Bebidas</a><a href="camadas.html" aria-current="page">Camadas</a><a href="reservas.html">Reservas</a></nav>
       <a class="snav__phone" href="https://wa.me/258851550000" target="_blank" rel="noopener">+258 85 155 0000</a>
       <a class="btn-menu" href="reservas.html">Reservar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg></a>
       <button class="nav__burger" id="burger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
@@ -73,7 +74,7 @@
       <img class="footer__logo" src="assets/brand/logo-white.png" alt="BBQ House" loading="lazy">
       <nav class="footer__col" aria-label="Rodapé">
         <span class="eyebrow">Navegar</span>
-        <a href="index.html">Início</a><a href="menu.html">Menu</a><a href="camadas.html">Camada a camada</a><a href="reservas.html">Reservas</a><a href="index.html#vibe">A vibe</a><a href="index.html#delivery">Delivery</a>
+        <a href="index.html">Início</a><a href="menu.html">Menu</a><a href="bebidas.html">Bebidas</a><a href="camadas.html">Camada a camada</a><a href="reservas.html">Reservas</a><a href="index.html#vibe">A vibe</a>
       </nav>
       <div class="footer__col" id="localizacao">
         <span class="eyebrow">Visite-nos</span>
@@ -101,11 +102,18 @@
       <button class="mnav__close" id="mnav-close" type="button" aria-label="Fechar menu">×</button>
     </div>
     <nav aria-label="Menu">
-      <a href="index.html">Início</a><a href="menu.html">Menu</a><a href="camadas.html">Camadas</a><a href="reservas.html">Reservas</a><a href="index.html#vibe">A vibe</a><a href="#contacto">Contacto</a>
+      <a href="index.html">Início</a><a href="menu.html">Menu</a><a href="bebidas.html">Bebidas</a><a href="camadas.html">Camadas</a><a href="reservas.html">Reservas</a><a href="#contacto">Contacto</a>
     </nav>
     <a class="btn-order btn-order--red btn-lg" href="https://wa.me/258851550000" target="_blank" rel="noopener">WhatsApp +258 85 155 0000</a>
   </div>
   <a class="fab" id="fab" href="reservas.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg>Reservar mesa</a>
+  <!-- Barra inferior (telemóvel) -->
+  <nav class="tabbar" aria-label="Atalhos">
+    <a href="menu.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
+    <a href="bebidas.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0z M12 14v6 M8 21h8"/></svg>Bebidas</a>
+    <a class="tabbar__main" href="reservas.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg>Reservar</a>
+    <a href="https://wa.me/258851550000" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z M9 9.5c.5 2.5 2.5 4.5 5 5l1.2-1.2 2 1-.5 1.6c-4 .3-8.4-4.1-8.1-8.1l1.6-.5 1 2z"/></svg>WhatsApp</a>
+  </nav>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="js/layers.js"></script>
