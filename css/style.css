@@ -307,9 +307,9 @@ h2 { font-family: var(--title); font-weight: 400; text-transform: uppercase; lin
 .menu, .house, .reserve, .vibe__pin, .story__sticky { position: relative; }
 .menu > .wrap, .house > .wrap, .reserve > .wrap { position: relative; z-index: 2; }
 .d-rosemary { width: 70px; left: 4%; top: 12%; }
-.d-sesame1 { width: 22px; left: 46%; top: 16%; }
-.d-sesame2 { width: 16px; left: 40%; top: 78%; }
-.d-pepper1 { width: 18px; right: 6%; top: 84%; }
+.d-sesame1 { width: 34px; left: 46%; top: 16%; }
+.d-sesame2 { width: 26px; left: 40%; top: 78%; }
+.d-pepper1 { width: 30px; right: 6%; top: 84%; }
 .d-spatula { width: 92px; left: -14px; top: 140px; }
 .d-chili { width: 190px; right: 2%; top: 60px; }
 .d-fry1 { width: 26px; right: 9%; top: 46%; }
@@ -355,7 +355,7 @@ h2 { font-family: var(--title); font-weight: 400; text-transform: uppercase; lin
 .marquee { background: var(--red); color: var(--cream); overflow: hidden; padding: 18px 0; transform: rotate(-1.6deg); margin: -10px -20px; position: relative; z-index: 4; box-shadow: 0 14px 30px -14px rgba(0,0,0,.6); }
 .marquee__track { display: flex; align-items: center; gap: 34px; width: max-content; animation: marquee 28s linear infinite; will-change: transform; }
 .marquee span { font-family: var(--title); font-size: 34px; text-transform: uppercase; white-space: nowrap; }
-.marquee i { width: 16px; height: 20px; background: url(../assets/img/deco/flame.svg) center / contain no-repeat; filter: brightness(0) invert(1); }
+.marquee i { width: 16px; height: 20px; background: url(../assets/img/deco/flame.webp) center / contain no-repeat; filter: brightness(0) invert(1); }
 @keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
 
 /* ---------- A VIBE (galeria horizontal) ---------- */

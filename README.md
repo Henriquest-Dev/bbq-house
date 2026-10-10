@@ -13,7 +13,7 @@ python3 -m http.server 8000
 3. **Faz zoom:** as 4 fotos do post do Instagram ("Faz zoom → Maaaais… → Um pouco mais… → Oooh, é isso!") formam um zoom contínuo controlado pelo scroll. As fotos estão alinhadas pelo centro do hambúrguer e entram umas nas outras com as bordas esbatidas. O texto é do próprio site e não está gravado na imagem.
 4. **A vibe:** galeria horizontal presa ao scroll, com fotos do Instagram da casa e as legendas deles.
 5. **Reservas:** escolha de pessoas, dia (próximos 14 dias), hora (10:30–21:00, as horas que já passaram ficam bloqueadas) e ocasião. O pedido segue formatado para o WhatsApp da casa e também pode ser guardado no calendário (.ics). Não precisa de servidor.
-6. **Ilustrações:** espátula, pinça, garfo, cutelo, chama, malagueta, alecrim, sésamo, pimenta, batata e cebola, desenhadas em SVG (`assets/img/deco/`). Movem-se e rodam com o scroll: umas aparecem com um "pop" ao entrar na secção, outras desvanecem ao sair, e todas seguem o rato de leve.
+6. **Ilustrações:** espátula, pinça, garfo, cutelo, chama, malagueta, alho, ervas, batata e cebola, em imagens fotorrealistas com fundo transparente (`assets/img/deco/`). Movem-se e rodam com o scroll: umas aparecem com um "pop" ao entrar na secção, outras desvanecem ao sair, e todas seguem o rato de leve.
 7. **Menu, A casa, Delivery e Rodapé:** identidade da direcção visual (fundo carvão, títulos altos e condensados, fotos com luz quente, vermelho só nas acções, âmbar nos pormenores).
 
 ## Hero
