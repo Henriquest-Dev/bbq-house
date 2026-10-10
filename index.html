@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BBQ House — Hamburgueria em Maputo</title>
+  <meta name="description" content="BBQ House, Baía Mall, Maputo. Hambúrgueres grelhados na chama, combos, wings e muito mais. Encomende pelo WhatsApp.">
+  <link rel="icon" href="assets/brand/logo-dark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HERO: carrossel vertical controlado pelo scroll -->
+  <section class="hero-scroll" id="hero-scroll" aria-label="Os nossos hambúrgueres">
+    <div class="hero" id="hero">
+      <div class="panel" id="panel"></div>
+
+      <header class="nav">
+        <div class="nav__left">
+          <a class="nav__logo" href="#" aria-label="BBQ House — início">
+            <img src="assets/brand/logo-dark.png" alt="BBQ House">
+          </a>
+          <nav class="nav__links" aria-label="Principal">
+            <a href="#menu">Menu</a>
+            <a href="#historia">A nossa história</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#delivery">Delivery</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+          <a class="btn-menu" href="#menu">
+            Menu
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4.5 8.5 4.5 12 6.5c3.5-2 6.5-2 9-1V19c-2.5-1-5.5-1-9 1-3.5-2-6.5-2-9-1z M12 6.5V20"/></svg>
+          </a>
+          <button class="nav__burger" aria-label="Abrir menu"><span></span><span></span></button>
+        </div>
+        <div class="nav__right">
+          <a class="nav__phone" href="https://wa.me/258851550000">+258 85 155 0000</a>
+          <button class="nav__city" type="button">Maputo
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Texto do produto (esquerda) -->
+      <div class="copy" id="copy">
+        <span class="copy__tag" data-anim id="tag">Novo</span>
+        <h1 class="copy__title" data-anim id="title">Cheese<br>Burger</h1>
+        <div class="copy__heat" data-anim>
+          <span class="flames" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2c1 4 5 5.5 5 11a5 5 0 0 1-10 0c0-2.6 1.4-4 2.4-5.4.4 1.6 1.2 2.4 2.1 2.6C11 7.6 11 5 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2c1 4 5 5.5 5 11a5 5 0 0 1-10 0c0-2.6 1.4-4 2.4-5.4.4 1.6 1.2 2.4 2.1 2.6C11 7.6 11 5 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2c1 4 5 5.5 5 11a5 5 0 0 1-10 0c0-2.6 1.4-4 2.4-5.4.4 1.6 1.2 2.4 2.1 2.6C11 7.6 11 5 12 2z"/></svg>
+          </span>
+          <span>Grelhado na chama</span>
+        </div>
+        <p class="copy__desc" data-anim id="desc"></p>
+        <span class="copy__label" data-anim>Ingredientes</span>
+        <ul class="copy__ingredients" data-anim id="ingredients"></ul>
+        <div class="copy__buy" data-anim>
+          <a class="btn-order" id="order" href="https://wa.me/258851550000" target="_blank" rel="noopener">Encomendar</a>
+          <span class="copy__price" id="price">750 <small>MZN</small></span>
+        </div>
+      </div>
+
+      <!-- Palco do hambúrguer -->
+      <div class="stage" id="stage">
+        <div class="stage__shadow" id="shadow"></div>
+        <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <button class="stage__hit" id="hit" type="button" aria-label="Ver as camadas do hambúrguer"></button>
+      <p class="stage__hint" id="hint">Toque no hambúrguer</p>
+
+      <!-- Fichas (como as "Calories / Fat / Protein" da referência) -->
+      <div class="facts" id="facts">
+        <div class="fact"><span>Camadas</span><b id="f-layers">7</b></div>
+        <div class="fact"><span>Carne</span><b id="f-meat">1×</b></div>
+        <div class="fact"><span>Queijo</span><b id="f-cheese">Sim</b></div>
+      </div>
+
+      <!-- Próximo hambúrguer a espreitar na margem -->
+      <div class="peek" id="peek" aria-hidden="true"></div>
+
+      <!-- Barra inferior -->
+      <div class="bar">
+        <ul class="thumbs" id="thumbs" aria-label="Escolher hambúrguer"></ul>
+        <div class="arrows">
+          <button class="arrow arrow--prev" id="prev" type="button" aria-label="Anterior">
+            <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <span class="counter" id="counter">01 / 06</span>
+          <button class="arrow arrow--next" id="next" type="button" aria-label="Seguinte">
+            <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <a class="bar__link" href="#menu">Menu completo
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="highlights" id="menu">
+    <div class="wrap">
+      <header class="section-head">
+        <span class="eyebrow">Do fogo para a mesa</span>
+        <h2>Um mundo no prato</h2>
+        <p>Hambúrgueres, frango, wings, combos e pizza — grelhados no Baía Mall, em Maputo, desde 2019.</p>
+      </header>
+      <div class="cards">
+        <article class="card card--red">
+          <img src="assets/img/burgers/korean.webp" alt="Korean Chicken" loading="lazy">
+          <div class="card__body"><h3>Korean Chicken</h3><span>770 MZN</span></div>
+        </article>
+        <article class="card card--amber">
+          <img src="assets/img/burgers/beef.webp" alt="Hambúrguer de carne BBQ House" loading="lazy">
+          <div class="card__body"><h3>Burgers</h3><span>desde 650 MZN</span></div>
+        </article>
+        <article class="card card--dark card--photo">
+          <img src="assets/img/photos/home-combos.webp" alt="Combo BBQ House com hambúrgueres, sanduíche e batatas" loading="lazy">
+          <div class="card__body"><h3>Combo 2 pessoas</h3><span>1,300 MZN</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="historia">
+    <figure><img src="assets/img/photos/home-wings.webp" alt="Chicken wings" loading="lazy"><figcaption>Chicken Wings · desde 620 MZN</figcaption></figure>
+    <figure><img src="assets/img/photos/menu-drinks.webp" alt="Bebida da casa" loading="lazy"><figcaption>Bebidas da casa</figcaption></figure>
+    <figure><img src="assets/img/photos/menu-desserts.webp" alt="Cookie pan" loading="lazy"><figcaption>Sobremesas</figcaption></figure>
+  </section>
+
+  <footer class="footer" id="contacto">
+    <div class="wrap footer__inner">
+      <img class="footer__logo" src="assets/brand/logo-white.png" alt="BBQ House">
+      <div id="localizacao">
+        <span class="eyebrow">Onde estamos</span>
+        <p>Baía Mall, Maputo · Moçambique</p>
+        <p>Aberto todos os dias, 10:30 – 21:30</p>
+      </div>
+      <div id="delivery">
+        <span class="eyebrow">Delivery &amp; takeaway</span>
+        <p><a href="https://wa.me/258851550000">WhatsApp +258 85 155 0000</a></p>
+        <a class="btn-order btn-order--red" href="https://wa.me/258851550000" target="_blank" rel="noopener">Encomendar agora</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
