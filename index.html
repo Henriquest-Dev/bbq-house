@@ -67,8 +67,11 @@
 
       <!-- Palco do hambúrguer -->
       <div class="stage" id="stage">
-        <div class="stage__shadow" id="shadow"></div>
-        <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="stage__par" id="parallax">
+          <div class="stage__shadow" id="shadow"></div>
+          <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="stage__bob" id="bob"></div>
+        </div>
       </div>
       <button class="stage__hit" id="hit" type="button" aria-label="Ver as camadas do hambúrguer"></button>
       <p class="stage__hint" id="hint">Toque no hambúrguer</p>
@@ -151,6 +154,7 @@
     </div>
   </footer>
 
+  <script src="assets/vendor/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
