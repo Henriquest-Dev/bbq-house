@@ -6,15 +6,18 @@ Site estático (HTML + CSS + JS). A animação usa GSAP 3.12.5, incluído em `as
 python3 -m http.server 8000
 ```
 
-## Página
+## Páginas
 
-1. **Hero:** carrossel vertical controlado pelo scroll (Korean Chicken, The Classic, Double Beef, Crispy BBQ). Clique no hambúrguer para abrir as camadas com o nome de cada ingrediente.
-2. **Camada a camada:** como pede a direcção visual, ao descer a página o Korean Chicken separa os ingredientes (o pão de cima primeiro), faz uma pausa com as legendas e volta a montar de baixo para cima, antes do menu.
-3. **Faz zoom:** as 4 fotos do post do Instagram ("Faz zoom → Maaaais… → Um pouco mais… → Oooh, é isso!") formam um zoom contínuo controlado pelo scroll. As fotos estão alinhadas pelo centro do hambúrguer e entram umas nas outras com as bordas esbatidas. O texto é do próprio site e não está gravado na imagem.
-4. **A vibe:** galeria horizontal presa ao scroll, com fotos do Instagram da casa e as legendas deles.
-5. **Reservas:** escolha de pessoas, dia (próximos 14 dias), hora (10:30–21:00, as horas que já passaram ficam bloqueadas) e ocasião. O pedido segue formatado para o WhatsApp da casa e também pode ser guardado no calendário (.ics). Não precisa de servidor.
-6. **Ilustrações:** espátula, pinça, garfo, cutelo, chama, malagueta, alho, ervas, batata e cebola, em imagens fotorrealistas com fundo transparente (`assets/img/deco/`). Movem-se e rodam com o scroll: umas aparecem com um "pop" ao entrar na secção, outras desvanecem ao sair, e todas seguem o rato de leve.
-7. **Menu, A casa, Delivery e Rodapé:** identidade da direcção visual (fundo carvão, títulos altos e condensados, fotos com luz quente, vermelho só nas acções, âmbar nos pormenores).
+| Página | O que tem |
+|---|---|
+| `index.html` | Hero (carrossel dos hambúrgueres + botão **Ver camadas**; na primeira visita o hambúrguer abre-se sozinho por instantes), Faz zoom, menu resumido, A vibe, A casa, chamadas para Camadas e Reservas, Delivery |
+| `menu.html` | Menu completo: 104 pratos e bebidas em 10 categorias, com as descrições publicadas em português. Barra de categorias fixa, pesquisa, destaques com foto e etiquetas (Picante, Poupa X). Cada prato tem "+" para juntar ao **pedido**, que segue formatado para o WhatsApp (entrega ou take-away) |
+| `camadas.html` | "Camada a camada" para 4 hambúrgueres (Korean Chicken, The Classic, Double Beef, Crispy BBQ): o scroll separa os ingredientes, pausa com as legendas e volta a montar. `camadas.html#korean-chicken` abre diretamente um deles |
+| `reservas.html` | Sistema de reservas (pessoas, dia, hora, ocasião → WhatsApp + calendário) |
+
+Dados do menu: `js/menu-data.js`, gerado a partir de bbqhousemoz.com/pt/menu (consulta 10/10/2026). As etiquetas "Picante" são deduzidas das descrições (malagueta, jalapeño, peri peri, buffalo…).
+
+Código: `js/layers.js` (camadas, partilhado), `js/main.js` (hero), `js/camadas.js`, `js/menu.js`, `js/extras.js` (zoom, galeria, ilustrações, reservas, menu do telemóvel, entradas das secções).
 
 ## Hero
 

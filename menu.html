@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu — BBQ House Maputo</title>
+  <meta name="description" content="O menu completo da BBQ House: hambúrgueres, sandes, pratos, pizza, massa, sobremesas e bebidas. Preços em MZN. Faça o seu pedido pelo WhatsApp.">
+  <link rel="icon" href="assets/brand/logo-dark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sub">
+  <header class="snav">
+    <div class="snav__in">
+      <a class="snav__logo" href="index.html" aria-label="BBQ House — início"><img src="assets/brand/logo-white.png" alt="BBQ House"></a>
+      <nav class="snav__links" aria-label="Principal"><a href="index.html">Início</a><a href="menu.html" aria-current="page">Menu</a><a href="camadas.html">Camada a camada</a><a href="index.html#vibe">A vibe</a><a href="reservas.html">Reservas</a></nav>
+      <a class="snav__phone" href="https://wa.me/258851550000" target="_blank" rel="noopener">+258 85 155 0000</a>
+      <a class="btn-menu" href="reservas.html">Reservar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg></a>
+      <button class="nav__burger" id="burger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero mhero">
+      <div class="page-hero__light" aria-hidden="true"></div>
+      <img class="deco d-mh-flame" src="assets/img/deco/flame.webp" alt="" aria-hidden="true" data-depth="0.6">
+      <img class="deco d-mh-chili" src="assets/img/deco/chili.webp" alt="" aria-hidden="true" data-depth="1.2" data-rot="-30">
+      <img class="deco d-mh-herb" src="assets/img/deco/rosemary.webp" alt="" aria-hidden="true" data-depth="0.9" data-rot="20">
+      <div class="wrap mhero__grid">
+        <div class="mhero__copy">
+          <span class="eyebrow">A world on a plate · Um mundo no prato</span>
+          <h1>O Menu</h1>
+          <p>Hambúrgueres em pão brioche, sandes em pão submarino, grelhados da brasa, pizza, massa e mocktails da casa. Escolhe, junta ao pedido e envia-nos pelo WhatsApp.</p>
+          <div class="mhero__cta">
+            <button class="btn-order btn-order--red btn-lg" type="button" id="open-basket">Ver o meu pedido (<span id="basket-count-2">0</span>)</button>
+            <a class="btn-ghost" href="reservas.html">Reservar mesa</a>
+          </div>
+          <ul class="mhero__facts"><li><b>104</b><span>pratos e bebidas</span></li><li><b>10</b><span>categorias</span></li><li><b>MZN</b><span>preços em meticais</span></li></ul>
+        </div>
+        <div class="mhero__stage" aria-hidden="true">
+          <img class="mhero__dish mhero__dish--a" src="assets/img/dishes/korean-chicken.webp" alt="">
+          <img class="mhero__dish mhero__dish--b" src="assets/img/dishes/loaded-nachos.webp" alt="">
+        </div>
+      </div>
+    </section>
+
+    <div class="mbar" id="mbar">
+      <div class="wrap mbar__in">
+        <nav class="mchips" id="mchips" aria-label="Categorias do menu"></nav>
+        <label class="msearch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z M16 16l5 5"/></svg><span class="sr">Procurar no menu</span><input id="msearch" type="search" placeholder="Procurar prato…" autocomplete="off"></label>
+      </div>
+    </div>
+
+    <div class="menu-page" id="menu-root"></div>
+
+    <section class="mcta">
+      <div class="wrap mcta__grid">
+        <a class="mcta__card" href="camadas.html" data-reveal>
+          <span class="eyebrow">Camada a camada</span><b>Vê o que vai dentro de cada hambúrguer</b><span class="btn-ghost">Abrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="mcta__card mcta__card--red" href="reservas.html" data-reveal>
+          <span class="eyebrow">Reservas</span><b>Guarda a tua mesa no Baía Mall</b><span class="btn-ghost">Reservar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pedido -->
+  <button class="basket-fab" id="basket-fab" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.5 12h-11z M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Pedido · <b id="basket-count">0</b></span><span id="basket-fab-total">0 MZN</span></button>
+  <div class="basket" id="basket" hidden role="dialog" aria-modal="true" aria-labelledby="basket-title">
+    <div class="basket__shade"></div>
+    <div class="basket__panel">
+      <div class="basket__top"><h2 id="basket-title">O teu pedido</h2><button class="mnav__close" id="basket-close" type="button" aria-label="Fechar pedido">×</button></div>
+      <ul class="basket__list" id="basket-list"></ul>
+      <div class="basket__sum"><span>Total estimado</span><b id="basket-total">0 MZN</b></div>
+      <form class="basket__form" id="basket-form" novalidate>
+        <div class="seg" id="basket-mode" role="group" aria-label="Tipo de pedido"><button type="button" data-v="Entrega" aria-pressed="true">Entrega</button><button type="button" data-v="Take-away" aria-pressed="false">Take-away</button></div>
+        <label class="field"><span>Nome</span><input id="b-name" autocomplete="name" placeholder="O teu nome"></label>
+        <label class="field" id="basket-addr-wrap"><span>Morada de entrega</span><input id="b-addr" autocomplete="street-address" placeholder="Bairro, rua, número, referência"></label>
+        <label class="field"><span>Notas <small>(opcional)</small></span><input id="b-notes" placeholder="Sem cebola, molho à parte…"></label>
+        <p class="rform__error" id="basket-err" role="alert"></p>
+        <button class="btn-order btn-order--red btn-lg" id="basket-send" type="submit">Enviar pedido pelo WhatsApp</button>
+        <p class="basket__note">A BBQ House confirma o pedido, a taxa de entrega e o tempo de espera no WhatsApp. <button type="button" id="basket-clear">Esvaziar pedido</button></p>
+      </form>
+    </div>
+  </div>
+  <footer class="footer" id="contacto">
+    <div class="wrap footer__top">
+      <img class="footer__logo" src="assets/brand/logo-white.png" alt="BBQ House" loading="lazy">
+      <nav class="footer__col" aria-label="Rodapé">
+        <span class="eyebrow">Navegar</span>
+        <a href="index.html">Início</a><a href="menu.html">Menu</a><a href="camadas.html">Camada a camada</a><a href="reservas.html">Reservas</a><a href="index.html#vibe">A vibe</a><a href="index.html#delivery">Delivery</a>
+      </nav>
+      <div class="footer__col" id="localizacao">
+        <span class="eyebrow">Visite-nos</span>
+        <p>Baía Mall, Maputo<br>Moçambique</p>
+        <p>Todos os dias<br>10:30 – 21:30</p>
+      </div>
+      <div class="footer__col">
+        <span class="eyebrow">Contacto</span>
+        <a href="https://wa.me/258851550000" target="_blank" rel="noopener">WhatsApp +258 85 155 0000</a>
+        <a href="https://www.instagram.com/bbqhouse.mz" target="_blank" rel="noopener">Instagram @bbqhouse.mz</a>
+        <a href="https://www.facebook.com/share/1EReG5933v/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">Um mundo no prato</div>
+    <div class="wrap footer__bottom">
+      <span>© 2026 BBQ House · Hamburgueria em Maputo</span>
+      <span>Preços em MZN, sujeitos a confirmação.</span>
+    </div>
+  </footer>
+
+  <!-- Menu do telemóvel -->
+  <div class="mnav" id="mnav" hidden role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mnav__top">
+      <img src="assets/brand/logo-white.png" alt="BBQ House" width="54">
+      <button class="mnav__close" id="mnav-close" type="button" aria-label="Fechar menu">×</button>
+    </div>
+    <nav aria-label="Menu">
+      <a href="index.html">Início</a><a href="menu.html">Menu</a><a href="camadas.html">Camadas</a><a href="reservas.html">Reservas</a><a href="index.html#vibe">A vibe</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn-order btn-order--red btn-lg" href="https://wa.me/258851550000" target="_blank" rel="noopener">WhatsApp +258 85 155 0000</a>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/menu-data.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/extras.js"></script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 (() => {
   'use strict';
   const gsap = window.gsap, ST = window.ScrollTrigger;
+  if (ST) gsap.registerPlugin(ST);
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -288,18 +289,20 @@
      BOTÃO "RESERVAR MESA" FLUTUANTE + MENU DO TELEMÓVEL
      ====================================================================== */
   function initChrome() {
-    const fab = $('#fab'), hero = $('#hero-scroll'), res = $('#reservas'), foot = $('#contacto');
-    const upd = () => {
-      const past = hero.getBoundingClientRect().bottom < innerHeight * 0.4;
-      const r = res.getBoundingClientRect(), f = foot.getBoundingClientRect();
-      const atRes = r.top < innerHeight * 0.8 && r.bottom > innerHeight * 0.2;
-      const z = $('#zoom').getBoundingClientRect();
-      const inZoom = z.top < innerHeight * 0.5 && z.bottom > innerHeight * 0.5; // a secção já tem o seu botão
-      fab.classList.toggle('is-on', past && !atRes && !inZoom && f.top > innerHeight - 40);
-    };
-    addEventListener('scroll', upd, { passive: true }); upd();
+    // botão flutuante: aparece depois do topo da página, esconde-se onde já há um botão de reserva
+    const fab = $('#fab'), top = $('#hero-scroll') || $('.page-hero'), foot = $('#contacto');
+    if (fab && top) {
+      const hideIn = ['#reservas', '#zoom', '#rform', '#basket'].map(q => $(q)).filter(Boolean);
+      const upd = () => {
+        const past = top.getBoundingClientRect().bottom < innerHeight * 0.4;
+        const busy = hideIn.some(el => { const r = el.getBoundingClientRect(); return r.top < innerHeight * 0.6 && r.bottom > innerHeight * 0.4; });
+        fab.classList.toggle('is-on', past && !busy && foot.getBoundingClientRect().top > innerHeight - 40);
+      };
+      addEventListener('scroll', upd, { passive: true }); upd();
+    }
 
     const btn = $('#burger-btn'), nav = $('#mnav');
+    if (!btn || !nav) return;
     const toggle = open => {
       btn.setAttribute('aria-expanded', open); nav.hidden = !open;
       document.documentElement.style.overflow = open ? 'hidden' : '';
@@ -312,15 +315,34 @@
     addEventListener('keydown', e => { if (e.key === 'Escape' && !nav.hidden) { toggle(false); btn.focus(); } });
   }
 
+  /* ======================================================================
+     ENTRADAS DAS SECÇÕES (todas as páginas)
+     ====================================================================== */
+  function initReveals() {
+    if (reduced || !ST) return;
+    gsap.set('[data-reveal]', { opacity: 0, y: 40 });
+    ST.batch('[data-reveal]', {
+      start: 'top 88%', once: true,
+      onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out', overwrite: true }),
+    });
+    $$('[data-parallax]').forEach(img => {
+      gsap.fromTo(img, { yPercent: -6 }, { yPercent: 6, ease: 'none',
+        scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+  }
+
   initReserve();
   initChrome();
-  // as animações de scroll medem a página: só depois de o hero ter a altura final
-  document.addEventListener('bbq:ready', () => {
+  // as animações de scroll medem a página: nas páginas com hambúrguer animado, só depois de este estar montado
+  const startScroll = () => {
     initZoom();
     initVibe();
     initDeco();
+    initReveals();
     if (ST) { ST.sort(); ST.refresh(); }
-  }, { once: true });
+  };
+  if ($('#hero') || $('#story')) document.addEventListener('bbq:ready', startScroll, { once: true });
+  else startScroll();
   // posições finais depois de as imagens e fontes carregarem (o pin da galeria muda a altura da página)
   addEventListener('load', () => { if (ST) { ST.sort(); ST.refresh(); } });
 })();
