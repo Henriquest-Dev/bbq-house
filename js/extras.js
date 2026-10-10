@@ -226,7 +226,7 @@
       const lines = [
         'Olá BBQ House! Gostaria de reservar uma mesa.',
         `• Nome: ${d.name}`, `• Telefone: ${d.phone}`, `• Dia: ${fmtLong.format(st.day)}`,
-        `• Hora: ${hhmm(st.time)}`, `• Pessoas: ${st.people}${st.people > 12 ? ' (grupo grande)' : ''}`,
+        `• Hora: ${hhmm(st.time)}`, `• Pessoas: ${st.people}`,
       ];
       if (st.occasion) lines.push(`• Ocasião: ${st.occasion}`);
       if (d.notes) lines.push(`• Notas: ${d.notes}`);

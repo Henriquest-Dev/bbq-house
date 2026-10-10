@@ -54,8 +54,8 @@
     $('#title').innerHTML = words.length > 1 ? `${words[0]}<br>${words.slice(1).join(' ')}` : s.name;
     $('#tag').textContent = s.tag;
     $('#desc').textContent = s.desc;
-    $('#price').innerHTML = s.price ? `${s.price} <small>MZN</small>` : '<small class="price-tbc">Preço no menu</small>';
-    const link = `${WA}?text=${encodeURIComponent(`Olá BBQ House! Quero encomendar: ${s.name}`)}`;
+    $('#price').innerHTML = `${s.from ? '<small>desde</small> ' : ''}${s.price} <small>MZN</small>`;
+    const link = `${WA}?text=${encodeURIComponent(s.from ? 'Olá BBQ House! Gostaria de fazer um pedido.' : `Olá BBQ House! Quero encomendar: ${s.name}`)}`;
     $('#order').href = link; orderPop.href = link;
 
     const geo = geoFor(s);

@@ -88,10 +88,7 @@ window.BBQ_MENU = [
       670
      ]
     ],
-    "d": "Lulas tenras, leves e crocantes, servidas com lima temperada com malagueta.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Lulas tenras, leves e crocantes, servidas com lima temperada com malagueta."
    },
    {
     "n": "Cheese Garlic Bread",
@@ -111,10 +108,7 @@ window.BBQ_MENU = [
       700
      ]
     ],
-    "d": "Camarão crocante em tempura, num molho dynamite bem picante.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Camarão crocante em tempura, num molho dynamite bem picante."
    },
    {
     "n": "Imported French Fries",
@@ -162,10 +156,7 @@ window.BBQ_MENU = [
       700
      ]
     ],
-    "d": "Frango crocante num glace coreano doce e picante.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Frango crocante num glace coreano doce e picante."
    },
    {
     "n": "Onion Rings",
@@ -187,10 +178,7 @@ window.BBQ_MENU = [
     ],
     "d": "Tortilhas com cheddar, natas azedas, carne de vaca à mexicana e jalapeño.",
     "img": "dishes/loaded-nachos.webp",
-    "imgk": "cut",
-    "t": [
-     "Picante"
-    ]
+    "imgk": "cut"
    },
    {
     "n": "Combo",
@@ -249,10 +237,7 @@ window.BBQ_MENU = [
       740
      ]
     ],
-    "d": "Frango crocante e picante envolvido no molho buffalo, com rúcula fresca, pickles e um fio de molho cheddar.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Frango crocante e picante envolvido no molho buffalo, com rúcula fresca, pickles e um fio de molho cheddar."
    },
    {
     "n": "Smoked Chicken",
@@ -282,10 +267,7 @@ window.BBQ_MENU = [
       850
      ]
     ],
-    "d": "Camarão crocante e dourado com rúcula fresca, maionese aromática de limão, malagueta e pickles.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Camarão crocante e dourado com rúcula fresca, maionese aromática de limão, malagueta e pickles."
    },
    {
     "n": "Crispy Sandwich",
@@ -388,7 +370,8 @@ window.BBQ_MENU = [
      ]
     ],
     "d": "Hambúrguer de vaca com cebola roxa, pickles, mostarda e cheddar derretido, em molho cocktail.",
-    "g": "Vaca"
+    "g": "Vaca",
+    "layers": "cheese-burger"
    },
    {
     "n": "Mushburger",
@@ -446,10 +429,7 @@ window.BBQ_MENU = [
     "g": "Frango",
     "img": "dishes/korean-chicken.webp",
     "imgk": "cut",
-    "layers": "korean-chicken",
-    "t": [
-     "Picante"
-    ]
+    "layers": "korean-chicken"
    },
    {
     "n": "Double Crisp",
@@ -460,10 +440,7 @@ window.BBQ_MENU = [
      ]
     ],
     "d": "Frango crocante frito em dose dupla, com maionese especial, molho de cheddar, fio de molho BBQ, alface e jalapeño.",
-    "g": "Frango",
-    "t": [
-     "Picante"
-    ]
+    "g": "Frango"
    },
    {
     "n": "Honey Mustard",
@@ -485,10 +462,7 @@ window.BBQ_MENU = [
      ]
     ],
     "d": "Hambúrguer de salmão caseiro com maionese de limão e malagueta, abacate grelhado, cebola roxa em conserva e rúcula.",
-    "g": "Salmão",
-    "t": [
-     "Picante"
-    ]
+    "g": "Salmão"
    }
   ],
   "name": "Hambúrgueres",
@@ -563,10 +537,7 @@ window.BBQ_MENU = [
       1550
      ]
     ],
-    "d": "Frango grelhado na brasa numa marinada caseira e bem picante de piri-piri, com pimentos e cebola roxa grelhados, finalizado com glace de malagueta. Servido com batatas fritas importadas e maionese de piri-piri.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Frango grelhado na brasa numa marinada caseira e bem picante de piri-piri, com pimentos e cebola roxa grelhados, finalizado com glace de malagueta. Servido com batatas fritas importadas e maionese de piri-piri."
    },
    {
     "n": "Beef Cheeks",
@@ -613,10 +584,7 @@ window.BBQ_MENU = [
       1000
      ]
     ],
-    "d": "Pizza acabada de sair do forno, coberta com frango à mexicana temperado, cebola roxa, jalapeño e azeitonas pretas.",
-    "t": [
-     "Picante"
-    ]
+    "d": "Pizza acabada de sair do forno, coberta com frango à mexicana temperado, cebola roxa, jalapeño e azeitonas pretas."
    },
    {
     "n": "Margherita Pizza",

@@ -14,7 +14,7 @@
       { name: 'bun-top',    x: 39,  y: 24,  w: 613, h: 248, label: 'Pão brioche com sésamo', icon: 'bun' },
       { name: 'mayo',       x: 50,  y: 248, w: 586, h: 85,  label: 'Maionese especial',      icon: 'sauce' },
       { name: 'garnish',    x: 124, y: 270, w: 568, h: 139, label: 'Alface e jalapeño',      icon: 'chili' },
-      { name: 'chicken',    x: 13,  y: 326, w: 667, h: 225, label: 'Frango crocante, cobertura coreana', icon: 'chicken' },
+      { name: 'chicken',    x: 13,  y: 326, w: 667, h: 225, label: 'Frango crocante em glace coreano', icon: 'chicken' },
       { name: 'bun-bottom', x: 44,  y: 488, w: 586, h: 154, label: 'Pão brioche',            icon: 'bun' },
     ] },
     beef: { by: 15, bx: 0, bw: 642, bh: 602, layers: [
@@ -24,7 +24,7 @@
       { name: 'onion',      x: 108, y: 273, w: 506, h: 95,  label: 'Cebola roxa',    icon: 'onion' },
       { name: 'patty-2',    x: 65,  y: 276, w: 551, h: 174, label: 'Carne grelhada', icon: 'patty' },
       { name: 'lettuce',    x: 8,   y: 334, w: 603, h: 147, label: 'Alface',         icon: 'lettuce' },
-      { name: 'sauce',      x: 48,  y: 426, w: 546, h: 108, label: 'Molho rosa',     icon: 'sauce' },
+      { name: 'sauce',      x: 48,  y: 426, w: 546, h: 108, label: 'Molho',          icon: 'sauce' },
       { name: 'bun-bottom', x: 0,   y: 427, w: 643, h: 191, label: 'Pão brioche',    icon: 'bun' },
     ] },
     'crispy-bbq': { by: 15, bx: 8, bw: 468, bh: 441, layers: [
@@ -39,13 +39,13 @@
   /* Camadas da imagem de referência (ingredientes fotografados em separado).
      rise: encaixe com o hambúrguer fechado · open: espaço com o hambúrguer aberto · sx/dx: ajuste fechado */
   const REF = {
-    'bun-top':    { w: 426, h: 227, cx: 637,   rise: 0,   open: 0,   sx: 1,    dx: 0,   label: 'Pão com sésamo', icon: 'bun' },
+    'bun-top':    { w: 426, h: 227, cx: 637,   rise: 0,   open: 0,   sx: 1,    dx: 0,   label: 'Pão brioche',    icon: 'bun' },
     'lettuce':    { w: 404, h: 129, cx: 652,   rise: 34,  open: 112, sx: 1.04, dx: -14, label: 'Alface',         icon: 'lettuce' },
     'tomato':     { w: 348, h: 123, cx: 628,   rise: 30,  open: 103, sx: 1.12, dx: 0,   label: 'Tomate',         icon: 'tomato' },
     'onion':      { w: 262, h: 76,  cx: 583,   rise: 14,  open: 60,  sx: 1.42, dx: 40,  label: 'Cebola roxa',    icon: 'onion' },
-    'cheese':     { w: 439, h: 134, cx: 595.5, rise: 26,  open: 134, sx: 1,    dx: 26,  label: 'Queijo',         icon: 'cheese' },
+    'cheese':     { w: 439, h: 134, cx: 595.5, rise: 26,  open: 134, sx: 1,    dx: 26,  label: 'Cheddar',        icon: 'cheese' },
     'patty':      { w: 427, h: 155, cx: 618.5, rise: 70,  open: 148, sx: 1,    dx: 6,   label: 'Carne grelhada', icon: 'patty' },
-    'bun-bottom': { w: 442, h: 220, cx: 633,   rise: 112, open: 220, sx: 1,    dx: 0,   label: 'Pão tostado',    icon: 'bun' },
+    'bun-bottom': { w: 442, h: 220, cx: 633,   rise: 112, open: 220, sx: 1,    dx: 0,   label: 'Pão brioche',    icon: 'bun' },
   };
   const REF_W = 470, REF_CX = 628;
 
@@ -54,20 +54,23 @@
      de referência (sem queijo). Double Beef / Crispy BBQ: fotos do site (categoria Burgers e Combos) — o nome exacto
      do prato não está confirmado; confirmar nome e preço antes de publicar. */
   const SLIDES = [
-    { name: 'Korean Chicken', tag: 'Destaque da casa', price: '770', color: '#C78A3B', ink: '#12100E', kit: 'korean',
-      desc: 'Frango crocante com cobertura coreana, maionese especial, jalapeño e alface em pão brioche. Toque no hambúrguer para o ver camada a camada.',
-      facts: [['Camadas', 5], ['Proteína', 'Frango'], ['Picante', 'Sim']] },
-    { name: 'The Classic', tag: 'Clássico', price: '650', color: '#D93425', ink: '#F6F1E9',
+    { name: 'Korean Chicken', tag: 'Chicken Burger', price: '770', color: '#C78A3B', ink: '#12100E', kit: 'korean',
+      desc: 'Frango crocante frito em glace coreano, com a nossa maionese especial, jalapeño e alface.',
+      facts: [['Camadas', 5], ['Proteína', 'Frango'], ['Pão', 'Brioche']] },
+    { name: 'The Classic', tag: 'Beef Burger', price: '650', color: '#D93425', ink: '#F6F1E9',
       ref: ['bun-bottom', 'patty', 'onion', 'tomato', 'lettuce', 'bun-top'],
-      desc: 'O original da casa, sem rodeios: carne, alface, cebola roxa, tomate e molho cocktail. Sem queijo, como manda a receita.',
-      facts: [['Camadas', 6], ['Proteína', 'Vaca'], ['Queijo', '—']] },
-    { name: 'Double Beef', tag: 'Dose dupla', price: null, color: '#12100E', ink: '#F6F1E9', kit: 'beef',
-      desc: 'Duas carnes grelhadas, tomate, cebola roxa, alface e molho rosa em pão brioche.',
-      facts: [['Camadas', 8], ['Carne', '2×'], ['Picante', '—']] },
-    { name: 'Crispy BBQ', tag: 'Frango', price: null, color: '#8E2A1C', ink: '#F6F1E9', kit: 'crispy-bbq',
-      desc: 'Frango crocante glaceado, alface ralada, jalapeño e molho em pão brioche.',
-      facts: [['Camadas', 5], ['Proteína', 'Frango'], ['Picante', 'Sim']] },
+      desc: 'Suculento hambúrguer de vaca com alface crocante, cebola roxa, tomate fresco em molho cocktail.',
+      facts: [['Camadas', 6], ['Proteína', 'Vaca'], ['Pão', 'Brioche']] },
+    { name: 'Cheese Burger', tag: 'Beef Burger', price: '750', color: '#12100E', ink: '#F6F1E9',
+      ref: ['bun-bottom', 'patty', 'cheese', 'onion', 'bun-top'],
+      desc: 'Hambúrguer de vaca com cebola roxa, pickles, mostarda e cheddar derretido, em molho cocktail.',
+      facts: [['Camadas', 5], ['Proteína', 'Vaca'], ['Pão', 'Brioche']] },
+    // foto da categoria Burgers do site (o site não diz qual é o prato): mostra-se como a secção "Holy Buns"
+    { name: 'Holy Buns', tag: 'Os nossos hambúrgueres', price: '650', from: true, color: '#8E2A1C', ink: '#F6F1E9', kit: 'beef',
+      desc: 'Todos servidos no nosso pão brioche acabado de cozer. 15 hambúrgueres de vaca, frango e salmão no menu.',
+      facts: [['Camadas', 8], ['No menu', 15], ['Pão', 'Brioche']] },
   ];
+
 
   const ICONS = {
     bun: 'M4 13c0-4.5 3.6-7 8-7s8 2.5 8 7z M3 16h18 M5 19h14 M9 9.5h.01 M13 8.5h.01 M15.5 10.5h.01',

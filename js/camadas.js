@@ -26,9 +26,9 @@
 
     const words = s.name.split(' ');
     $('#story-title').innerHTML = words.length > 1 ? `${words[0]}<br>${words.slice(1).join(' ')}` : s.name;
-    $('#story-desc').textContent = s.desc.replace(/ Toque no hambúrguer.*$/, '');
-    $('#story-price').innerHTML = s.price ? `${s.price} <small>MZN</small>` : '<small>Preço no menu</small>';
-    $('#story-order').href = `${WA}?text=${encodeURIComponent(`Olá BBQ House! Quero encomendar: ${s.name}`)}`;
+    $('#story-desc').textContent = s.desc;
+    $('#story-price').innerHTML = `${s.from ? '<small>desde</small> ' : ''}${s.price} <small>MZN</small>`;
+    $('#story-order').href = `${WA}?text=${encodeURIComponent(s.from ? 'Olá BBQ House! Gostaria de fazer um pedido.' : `Olá BBQ House! Quero encomendar: ${s.name}`)}`;
 
     gsap.set('#story-cta', { opacity: reduced ? 1 : 0 });
     const geo = geoFor(s);
@@ -89,7 +89,7 @@
 
   const $$tabs = () => [...tabs.querySelectorAll('button')];
   tabs.innerHTML = SLIDES.map((s, i) =>
-    `<button type="button" role="tab" aria-selected="false" data-i="${i}"><b>${s.name}</b><small>${s.price ? s.price + ' MZN' : 'Ver no menu'}</small></button>`).join('');
+    `<button type="button" role="tab" aria-selected="false" data-i="${i}"><b>${s.name}</b><small>${s.from ? 'desde ' : ''}${s.price} MZN</small></button>`).join('');
   $$tabs().forEach((b, i) => b.addEventListener('click', () => {
     if (b.getAttribute('aria-selected') === 'true') return;
     const top = sec.getBoundingClientRect().top + scrollY;
