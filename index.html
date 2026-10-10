@@ -26,15 +26,15 @@
           <nav class="nav__links" aria-label="Principal">
             <a href="#menu">Menu</a>
             <a href="#historia">A nossa história</a>
-            <a href="#localizacao">Localização</a>
+            <a href="#vibe">A vibe</a>
             <a href="#delivery">Delivery</a>
             <a href="#contacto">Contacto</a>
           </nav>
-          <a class="btn-menu" href="#menu">
-            Menu
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4.5 8.5 4.5 12 6.5c3.5-2 6.5-2 9-1V19c-2.5-1-5.5-1-9 1-3.5-2-6.5-2-9-1z M12 6.5V20"/></svg>
+          <a class="btn-menu" href="#reservas">
+            Reservar
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg>
           </a>
-          <button class="nav__burger" aria-label="Abrir menu"><span></span><span></span></button>
+          <button class="nav__burger" id="burger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
         </div>
         <div class="nav__right">
           <a class="nav__phone" href="https://wa.me/258851550000">+258 85 155 0000</a>
@@ -103,10 +103,45 @@
     </div>
   </section>
 
+  <!-- FAZ ZOOM: sequência do Instagram, zoom controlado pelo scroll -->
+  <section class="zoom" id="zoom" aria-label="Faz zoom">
+    <div class="zoom__sticky">
+      <div class="zoom__bg" aria-hidden="true"></div>
+      <div class="wrap zoom__grid">
+        <div class="zoom__copy">
+          <span class="eyebrow">The Original · Premium Quality</span>
+          <div class="zoom__words" aria-live="polite">
+            <h2 class="zoom__word is-on">Faz zoom</h2>
+            <h2 class="zoom__word">Maaaais…</h2>
+            <h2 class="zoom__word">Um pouco mais…</h2>
+            <h2 class="zoom__word zoom__word--gold">Oooh, é isso!</h2>
+          </div>
+          <p class="zoom__line">Quanto mais perto, mais difícil fica resistir.</p>
+          <div class="zoom__cta">
+            <a class="btn-order btn-order--red" href="#reservas">Reservar mesa</a>
+            <a class="btn-ghost" href="#menu">Ver o menu</a>
+          </div>
+          <div class="zoom__bar" aria-hidden="true"><i id="zoom-bar"></i></div>
+        </div>
+        <div class="zoom__frame" id="zoom-frame">
+          <img src="assets/img/zoom/z1.webp" alt="Hambúrguer de frango BBQ House em frente ao logótipo dourado" class="zoom__img">
+          <img src="assets/img/zoom/z2.webp" alt="" class="zoom__img" aria-hidden="true">
+          <img src="assets/img/zoom/z3.webp" alt="" class="zoom__img" aria-hidden="true">
+          <img src="assets/img/zoom/z4.webp" alt="" class="zoom__img" aria-hidden="true">
+          <span class="zoom__corner zoom__corner--tl"></span><span class="zoom__corner zoom__corner--br"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CAMADA A CAMADA: o scroll separa os ingredientes, pausa e volta a montar -->
   <section class="story" id="story" aria-label="Korean Chicken camada a camada">
     <div class="story__sticky">
       <div class="story__light" aria-hidden="true"></div>
+      <img class="deco d-rosemary" src="assets/img/deco/rosemary.svg" alt="" aria-hidden="true" data-depth="0.6" data-rot="-30">
+      <img class="deco d-sesame1" src="assets/img/deco/sesame.svg" alt="" aria-hidden="true" data-depth="1.4" data-rot="120">
+      <img class="deco d-sesame2" src="assets/img/deco/sesame.svg" alt="" aria-hidden="true" data-depth="0.9" data-rot="-80">
+      <img class="deco d-pepper1" src="assets/img/deco/pepper.svg" alt="" aria-hidden="true" data-depth="1.2">
       <div class="wrap story__grid">
         <div class="story__copy">
           <span class="eyebrow">Camada a camada</span>
@@ -127,6 +162,10 @@
 
   <!-- MENU -->
   <section class="menu" id="menu">
+    <img class="deco d-spatula" src="assets/img/deco/spatula.svg" alt="" aria-hidden="true" data-depth="0.8" data-rot="28" data-pop>
+    <img class="deco d-chili" src="assets/img/deco/chili.svg" alt="" aria-hidden="true" data-depth="1.3" data-rot="-40" data-pop>
+    <img class="deco d-fry1" src="assets/img/deco/fry.svg" alt="" aria-hidden="true" data-depth="1.6" data-rot="160">
+    <img class="deco d-fry2" src="assets/img/deco/fry.svg" alt="" aria-hidden="true" data-depth="1.1" data-rot="-120">
     <div class="wrap">
       <header class="section-head" data-reveal>
         <span class="eyebrow">O menu</span>
@@ -135,43 +174,43 @@
       </header>
       <div class="mgrid">
         <a class="mcard card--xl" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-burgers.webp" alt="Hambúrguer de carne da BBQ House" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-burgers.webp" alt="Hambúrguer de carne da BBQ House" decoding="async" data-parallax>
           <span class="mcard__body"><b>Burgers</b><small>desde 650 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/home-wings.webp" alt="Frango frito crocante" loading="lazy" data-parallax>
+          <img src="assets/img/photos/home-wings.webp" alt="Frango frito crocante" decoding="async" data-parallax>
           <span class="mcard__body"><b>Entradas &amp; wings</b><small>desde 300 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-sandwiches.webp" alt="Sanduíche de frango crocante" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-sandwiches.webp" alt="Sanduíche de frango crocante" decoding="async" data-parallax>
           <span class="mcard__body"><b>Sanduíches</b><small>desde 700 MZN</small></span>
         </a>
         <a class="mcard card--wide" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-combos.webp" alt="Combo com hambúrgueres e batatas" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-combos.webp" alt="Combo com hambúrgueres e batatas" decoding="async" data-parallax>
           <span class="mcard__body"><b>Combos</b><small>desde 1,300 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-mains.webp" alt="Prato principal servido em chapa" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-mains.webp" alt="Prato principal servido em chapa" decoding="async" data-parallax>
           <span class="mcard__body"><b>Pratos</b><small>desde 1,350 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-eataly.webp" alt="Massa com molho cremoso" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-eataly.webp" alt="Massa com molho cremoso" decoding="async" data-parallax>
           <span class="mcard__body"><b>Pizza &amp; pasta</b><small>desde 900 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-kids.webp" alt="Mini hambúrgueres e nuggets" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-kids.webp" alt="Mini hambúrgueres e nuggets" decoding="async" data-parallax>
           <span class="mcard__body"><b>Kids</b><small>desde 550 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-salads.webp" alt="Salada da casa" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-salads.webp" alt="Salada da casa" decoding="async" data-parallax>
           <span class="mcard__body"><b>Saladas</b><small>desde 750 MZN</small></span>
         </a>
         <a class="mcard " href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-desserts.webp" alt="Cookie pan com gelado" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-desserts.webp" alt="Cookie pan com gelado" decoding="async" data-parallax>
           <span class="mcard__body"><b>Sobremesas</b><small>desde 550 MZN</small></span>
         </a>
         <a class="mcard card--wide" href="https://bbqhousemoz.com/menu" target="_blank" rel="noopener" data-reveal>
-          <img src="assets/img/photos/menu-drinks.webp" alt="Bebida da casa" loading="lazy" data-parallax>
+          <img src="assets/img/photos/menu-drinks.webp" alt="Bebida da casa" decoding="async" data-parallax>
           <span class="mcard__body"><b>Bebidas</b><small>desde 70 MZN</small></span>
         </a>
       </div>
@@ -182,11 +221,82 @@
     </div>
   </section>
 
+  <!-- FAIXA -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>The Original</span><i></i><span>Premium Quality</span><i></i><span>Grelhado na chama</span><i></i><span>Um mundo no prato</span><i></i><span>Baía Mall · Maputo</span><i></i>
+      <span>The Original</span><i></i><span>Premium Quality</span><i></i><span>Grelhado na chama</span><i></i><span>Um mundo no prato</span><i></i><span>Baía Mall · Maputo</span><i></i>
+    </div>
+  </div>
+
+  <!-- A VIBE: galeria horizontal com as publicações do Instagram -->
+  <section class="vibe" id="vibe" aria-label="A vibe BBQ House">
+    <div class="vibe__pin">
+      <img class="deco d-flame" src="assets/img/deco/flame.svg" alt="" aria-hidden="true" data-depth="0.7">
+      <img class="deco d-onion" src="assets/img/deco/onion.svg" alt="" aria-hidden="true" data-depth="1.2" data-rot="90">
+      <header class="vibe__head wrap">
+        <div>
+          <span class="eyebrow">@bbqhouse.mz</span>
+          <h2>Delirar é normal</h2>
+        </div>
+        <p>Quando o sabor vem do BBQ House. Momentos reais das nossas mesas.</p>
+      </header>
+      <div class="vibe__track" id="vibe-track">
+        <figure class="vcard">
+          <img src="assets/img/vibe/v16.webp" alt="Dois amigos de boca aberta diante de um hambúrguer duplo com batatas" loading="lazy">
+          <figcaption>Aqui a pergunta não é “vais partilhar?” É “vais pedir outro?”</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v13.webp" alt="Cliente a morder uma sanduíche com queijo a esticar" loading="lazy">
+          <figcaption>Morde primeiro. Faz perguntas depois.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v00.webp" alt="Cliente entusiasmada com um prato de nachos" loading="lazy">
+          <figcaption>Se é sabor BBQ, vale a pena. Se é para provar, vale ainda mais.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v07.webp" alt="Cliente surpreendido diante de uma mesa cheia de pratos" loading="lazy">
+          <figcaption>Imagina o sabor. Agora vem provar na vida real.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v15.webp" alt="Cliente numa mesa com milkshake, pizza e hambúrgueres" loading="lazy">
+          <figcaption>Escolher uma só é falta de ambição.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v09.webp" alt="Cliente a comer um mozzarella stick diante do logótipo dourado" loading="lazy">
+          <figcaption>Não lutes contra a vontade. Vem saborear.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v11.webp" alt="Cliente a provar massa" loading="lazy">
+          <figcaption>Podes tentar explicar. Depois de provar, vais perceber.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v17.webp" alt="Cliente a olhar para um hambúrguer de frango" loading="lazy">
+          <figcaption>A tua nova paixão está no BBQ House. Vem encarar!</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v08.webp" alt="Cliente a morder frango crocante" loading="lazy">
+          <figcaption>Crocante por fora. Inesquecível por dentro.</figcaption>
+        </figure>
+        <figure class="vcard">
+          <img src="assets/img/vibe/v14.webp" alt="Duas mãos com hambúrgueres sobre a mesa" loading="lazy">
+          <figcaption>Há coisas que simplesmente não se deixam para trás.</figcaption>
+        </figure>
+        <a class="vcard vcard--end" href="https://www.instagram.com/bbqhouse.mz" target="_blank" rel="noopener">
+          <span class="eyebrow">Segue-nos</span>
+          <b>@bbqhouse.mz</b>
+          <span class="btn-ghost">Abrir Instagram <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- A CASA -->
   <section class="house" id="historia">
+    <img class="deco d-cleaver" src="assets/img/deco/cleaver.svg" alt="" aria-hidden="true" data-depth="0.7" data-rot="-18" data-pop>
     <div class="wrap house__grid">
       <figure class="house__photo" data-reveal>
-        <img src="assets/img/photos/home-korean-chicken.webp" alt="Korean Chicken com batatas fritas" loading="lazy" data-parallax>
+        <img src="assets/img/photos/home-korean-chicken.webp" alt="Korean Chicken com batatas fritas" decoding="async" data-parallax>
         <figcaption>Desde 2019</figcaption>
       </figure>
       <div class="house__copy">
@@ -198,6 +308,82 @@
           <li data-reveal><b>Clássicos bem feitos</b><span>Burgers, wings, batatas e combos, direto da grelha.</span></li>
           <li data-reveal><b>Delivery &amp; takeaway</b><span>Encomende pelo WhatsApp.</span></li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section class="reserve" id="reservas" aria-labelledby="reserve-title">
+    <img class="deco d-tongs" src="assets/img/deco/tongs.svg" alt="" aria-hidden="true" data-depth="0.8" data-rot="-24" data-pop>
+    <img class="deco d-fork" src="assets/img/deco/fork.svg" alt="" aria-hidden="true" data-depth="1.1" data-rot="22" data-pop>
+    <img class="deco d-chili2" src="assets/img/deco/chili.svg" alt="" aria-hidden="true" data-depth="1.4" data-rot="60">
+    <div class="wrap reserve__grid">
+      <div class="reserve__intro" data-reveal>
+        <span class="eyebrow">Reservas</span>
+        <h2 id="reserve-title">Guarda a tua mesa</h2>
+        <p>Escolhe o dia, a hora e quantas pessoas vêm. Enviamos o pedido pelo WhatsApp e a equipa confirma a tua reserva.</p>
+        <ul class="reserve__facts">
+          <li><b>Baía Mall, Maputo</b><span>Todos os dias, 10:30 – 21:30</span></li>
+          <li><b>Grupos grandes</b><span>Acima de 12 pessoas, falamos contigo para preparar a mesa.</span></li>
+        </ul>
+      </div>
+
+      <form class="rform" id="rform" novalidate data-reveal>
+        <div class="rform__step" data-step="1">
+          <span class="rform__label">Quantas pessoas?</span>
+          <div class="rform__people" role="group" aria-label="Número de pessoas">
+            <button type="button" class="pbtn" data-delta="-1" aria-label="Menos uma pessoa">−</button>
+            <output id="r-people" aria-live="polite">2</output>
+            <button type="button" class="pbtn" data-delta="1" aria-label="Mais uma pessoa">+</button>
+          </div>
+        </div>
+
+        <div class="rform__step">
+          <span class="rform__label">Dia</span>
+          <div class="rform__days" id="r-days" role="radiogroup" aria-label="Dia da reserva"></div>
+        </div>
+
+        <div class="rform__step">
+          <span class="rform__label">Hora</span>
+          <div class="rform__times" id="r-times" role="radiogroup" aria-label="Hora da reserva"></div>
+        </div>
+
+        <div class="rform__step">
+          <span class="rform__label">Ocasião <small>(opcional)</small></span>
+          <div class="rform__chips" id="r-occasion" role="radiogroup" aria-label="Ocasião">
+            <button type="button" class="chip" data-v="Aniversário">Aniversário</button>
+            <button type="button" class="chip" data-v="Encontro">Encontro</button>
+            <button type="button" class="chip" data-v="Família">Família</button>
+            <button type="button" class="chip" data-v="Amigos">Amigos</button>
+            <button type="button" class="chip" data-v="Trabalho">Trabalho</button>
+          </div>
+        </div>
+
+        <div class="rform__row">
+          <label class="field"><span>Nome</span><input id="r-name" name="name" autocomplete="name" required placeholder="O teu nome"></label>
+          <label class="field"><span>Telefone</span><input id="r-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+258 8x xxx xxxx"></label>
+        </div>
+        <label class="field"><span>Notas <small>(opcional)</small></span><textarea id="r-notes" rows="2" placeholder="Cadeira de bebé, alergias, bolo de aniversário…"></textarea></label>
+
+        <p class="rform__error" id="r-error" role="alert"></p>
+        <button class="btn-order btn-order--red btn-lg rform__submit" type="submit">Pedir reserva</button>
+      </form>
+
+      <div class="rdone" id="rdone" hidden tabindex="-1">
+        <span class="rdone__tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <span class="eyebrow">Pedido pronto</span>
+        <h3>Até já, <span id="d-name"></span>!</h3>
+        <dl class="rdone__sum">
+          <div><dt>Dia</dt><dd id="d-day"></dd></div>
+          <div><dt>Hora</dt><dd id="d-time"></dd></div>
+          <div><dt>Pessoas</dt><dd id="d-people"></dd></div>
+        </dl>
+        <p>Falta um passo: envia o pedido pelo WhatsApp. A reserva fica confirmada quando a equipa responder.</p>
+        <div class="rdone__actions">
+          <a class="btn-order btn-order--red btn-lg" id="d-wa" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+          <button class="btn-ghost" type="button" id="d-ics">Adicionar ao calendário</button>
+          <button class="rdone__edit" type="button" id="d-edit">Alterar pedido</button>
+        </div>
       </div>
     </div>
   </section>
@@ -222,7 +408,7 @@
       <img class="footer__logo" src="assets/brand/logo-white.png" alt="BBQ House" loading="lazy">
       <nav class="footer__col" aria-label="Rodapé">
         <span class="eyebrow">Navegar</span>
-        <a href="#menu">Menu</a><a href="#story">Camada a camada</a><a href="#historia">A casa</a><a href="#delivery">Delivery</a>
+        <a href="#menu">Menu</a><a href="#reservas">Reservas</a><a href="#vibe">A vibe</a><a href="#story">Camada a camada</a><a href="#historia">A casa</a><a href="#delivery">Delivery</a>
       </nav>
       <div class="footer__col" id="localizacao">
         <span class="eyebrow">Visite-nos</span>
@@ -243,8 +429,23 @@
     </div>
   </footer>
 
+  <!-- Menu do telemóvel -->
+  <div class="mnav" id="mnav" hidden role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mnav__top">
+      <img src="assets/brand/logo-white.png" alt="BBQ House" width="54">
+      <button class="mnav__close" id="mnav-close" type="button" aria-label="Fechar menu">×</button>
+    </div>
+    <nav aria-label="Menu">
+      <a href="#menu">Menu</a><a href="#reservas">Reservas</a><a href="#vibe">A vibe</a><a href="#historia">A casa</a><a href="#delivery">Delivery</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn-order btn-order--red btn-lg" href="https://wa.me/258851550000" target="_blank" rel="noopener">WhatsApp +258 85 155 0000</a>
+  </div>
+
+  <a class="fab" id="fab" href="#reservas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg>Reservar mesa</a>
+
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/extras.js"></script>
 </body>
 </html>

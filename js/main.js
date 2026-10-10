@@ -574,5 +574,6 @@
     initHero();
     initStory();
     initReveals();
+    document.dispatchEvent(new Event('bbq:ready')); // hero com a altura final: as outras secções podem medir
   });
 })();
