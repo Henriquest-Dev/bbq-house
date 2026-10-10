@@ -50,9 +50,8 @@
   const REF_W = 470, REF_CX = 628;
 
   /* ---------- Slides do hero ----------
-     Korean Chicken: foto e preço publicados no site. The Classic: receita da direcção visual, montada com as camadas
-     de referência (sem queijo). Double Beef / Crispy BBQ: fotos do site (categoria Burgers e Combos) — o nome exacto
-     do prato não está confirmado; confirmar nome e preço antes de publicar. */
+     Nomes, preços e descrições como publicados no menu (bbqhousemoz.com/menu). The Classic e Cheese Burger usam as
+     camadas da imagem de referência; Holy Buns usa a foto da categoria Burgers do site (que não identifica o prato). */
   const SLIDES = [
     { name: 'Korean Chicken', tag: 'Chicken Burger', price: '770', color: '#C78A3B', ink: '#12100E', kit: 'korean',
       desc: 'Frango crocante frito em glace coreano, com a nossa maionese especial, jalapeño e alface.',
